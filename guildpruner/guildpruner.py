@@ -63,10 +63,10 @@ for entry in flagged_list:
 
     kick_button = driver.find_element_by_xpath('//input[@value="exclude"]')
     kick_button.click()
-    print(entry + " has been kicked from the guild.")
 
     hammer = driver.find_element_by_name("Submit")
     hammer.click()
+    print(entry + " has been kicked from the guild.")
 
     time.sleep(1) # might not be necessary
 
