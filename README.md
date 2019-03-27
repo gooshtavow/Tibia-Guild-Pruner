@@ -10,7 +10,7 @@ To run this program, you will need (the versions below are the ones that were te
     * [Scrapy](https://scrapy.org/)* 1.5.2
     * [Selenium](https://www.seleniumhq.org/) 3.141.0
 * Google Chrome** 73.0
-* [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)** 73.0
+* [Chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)** 73.0 - Place it in the same folder as guildpruner.py.
  
 *Scrapy installation could be a little complicated. If you wish to make it way simpler, install [Anaconda](https://www.anaconda.com/distribution/), then install Scrapy (and Selenium) in it and use its prompt.
 
