@@ -31,8 +31,8 @@ The second program, guildpruner, will effectively kick those people out of the g
 5. The program will now run (it will take a while if your guild is big) and create the `flagged_characters.txt` file in the ./guildchecker folder. Leave it there.
 6. Now navigate to the ./guildpruner folder and run `python guildpruner.py`. It will fail to start if the text file is not present in the other folder.
 7. The program will ask for your guild's name again. And it is, surprise surprise, case sensitive.
-8. After entering the guild's name, the program will now start an automated instance of Google Chrome. **DO NOT TOUCH THIS BROWSER!** It will firstly visit tibia.com login page, where you must enter your account number and password, as requested by the program. Again, keep entering the information in the program window, and NOT the browser's window.
+8. After entering the guild's name, the program will now start an automated instance of Google Chrome. **DO NOT TOUCH THIS BROWSER! EVER!** It will firstly visit tibia.com login page, where you must enter your account number and password, as requested by the program. Again, keep entering the information in the program window, and NOT the browser's window.
 9. (optional) If you have an authenticator bound to your account, it will then ask for an access token.
 10. The program now will visit your guild's "Edit Members" page and start kicking those characters present in the text file created in step 5. Watch the world burn while you do nothing! The browser will close itself when it's done.
 
-Note: This program isn't (yet?) protected against bad input. You can enter whatever you want when it asks you for information, so it is up to you to enter the correct information to get correct results. It's your guild, your account and your connection you're using when you run it, so there's no point in entering bad information on purpose.
+Note: This program isn't (yet?) protected against bad input. You can enter whatever you want when it asks you for information, so it is up to you to enter the correct information to get correct results. It's your guild, your account and your connection you're using when you run it!

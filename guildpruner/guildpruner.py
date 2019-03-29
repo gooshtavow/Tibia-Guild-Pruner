@@ -3,6 +3,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
 import time
 import getpass
 
@@ -15,15 +16,17 @@ flagged_list = []
 if all_list:
     for entry in all_list:
         flagged_char = entry.split(',')[0]
-        flagged_list.append(flagged_char)
+        flagged_list.append(flagged_char)        
 
 guild_name = input('Enter the guild name (case sensitive): ')
 guild_name = guild_name.replace(' ', '+')
 
+
+
 driver = webdriver.Chrome('./chromedriver.exe')
 driver.get("https://www.tibia.com/account/?subtopic=accountmanagement")
 
-# Authentication phase. Shuold work with or without two-factor authentication. [tested with 2FA only]
+# Authentication phase. Should work with or without two-factor authentication. [tested with 2FA only]
 acc_and_password = False
 
 while not acc_and_password:
@@ -36,14 +39,14 @@ while not acc_and_password:
     paswd.send_keys(password)
     paswd.send_keys(Keys.RETURN)
     time.sleep(1) # might not be necessary
-    if driver.current_url != 'https://www.tibia.com/account/?subtopic=accountmanagement':
-        acc_and_password = True
-
-
-if driver.current_url == 'https://www.tibia.com/account/?subtopic=accountmanagement&page=twofactor&step=login':
-    logged_in = False
-else:
-    logged_in = True
+    try:
+        if driver.find_element_by_name("Manage Account"):
+            acc_and_password = True
+            logged_in = True
+    except NoSuchElementException:
+        if driver.current_url == 'https://www.tibia.com/account/?subtopic=accountmanagement&page=twofactor&step=login':
+            acc_and_password = True
+            logged_in = False
 
 while not logged_in:
     token = driver.find_element_by_name("totp")
