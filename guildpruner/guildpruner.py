@@ -26,13 +26,13 @@ guild_name = guild_name.replace(' ', '+')
 driver = webdriver.Chrome('./chromedriver.exe')
 driver.get("https://www.tibia.com/account/?subtopic=accountmanagement")
 
-# Authentication phase. Should work with or without two-factor authentication. [tested with 2FA only]
+# Authentication phase. Should work with or without two-factor authentication.
 acc_and_password = False
 
 while not acc_and_password:
-    acc_name = getpass.getpass("Enter your account name: ")
+    acc_name = getpass.getpass("Enter your account e-mail: ")
     password = getpass.getpass("Enter your password: ")
-    user = driver.find_element_by_name("loginname")
+    user = driver.find_element_by_name("loginemail")
     paswd = driver.find_element_by_name("loginpassword")
 
     user.send_keys(acc_name)
